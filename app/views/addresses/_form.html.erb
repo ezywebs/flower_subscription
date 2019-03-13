@@ -1,0 +1,36 @@
+<%#= form_with(model: address, local: true) do |form| %>
+
+
+<!--  <div class="actions">-->
+    <%#= form.submit %>
+<!--  </div>-->
+<%# end %>
+
+
+<%= form_for address do |f| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+        <% address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :address1 %>
+  <%= f.text_field :address1 %>
+
+  <%= f.label :address2 %>
+  <%= f.text_field :address2 %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :zip_code %>
+  <%= f.text_field :zip_code %>
+
+  <%= f.button :submit %>
+<% end %>

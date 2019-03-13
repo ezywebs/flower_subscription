@@ -1,0 +1,24 @@
+<%= form_for product do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+        <% product.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :size %>
+  <%= f.select(:size, Product.sizes.keys.map {|size| [size.titleize,size]}) %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.button :submit %>
+<% end %>

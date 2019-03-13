@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>Zip</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @addresses.each do |address| %>
+    <tr>
+      <td><%= address.address1 %></td>
+      <td><%= address.address2 %></td>
+      <td><%= address.city %></td>
+      <td><%= address.zip_code %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

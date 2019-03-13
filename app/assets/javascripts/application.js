@@ -11,5 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
+//= require credit_card_form.js
